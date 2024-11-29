@@ -54,13 +54,7 @@ PROC_NR=$(getconf _NPROCESSORS_ONLN)
 ## Create and enter the toolchain/build directory
 rm -rf build-$TARGET && mkdir build-$TARGET && cd build-$TARGET
 
-## Build GDB without python support when built with a GitHub Action
-## This makes the pre-build executable work on more systems
-if [ -n "$CI" ]; then
-  WITH_PYTHON="no"
-else
-  WITH_PYTHON="auto"
-fi
+WITH_PYTHON="no"
 
 ## Configure the build.
 ../configure \
