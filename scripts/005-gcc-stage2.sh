@@ -69,6 +69,7 @@ cd build-$TARGET-stage2
   --disable-multilib \
   --enable-threads=posix \
   --disable-tls \
+  --disable-nls \
   $TARG_XTRA_OPTS
 
 ## Compile and install.
