@@ -42,11 +42,11 @@ PROC_NR=$(getconf _NPROCESSORS_ONLN)
 if [ "$(uname -s)" = "Darwin" ]; then
   ## Check if using brew
   if command -v brew &> /dev/null; then
-    TARG_XTRA_OPTS="--with-gmp=$(brew --prefix gmp) --with-mpfr=$(brew --prefix mpfr) --with-mpc=$(brew --prefix libmpc)"
+    TARG_XTRA_OPTS="--with-gmp=$(brew --prefix gmp) --with-mpfr=$(brew --prefix mpfr) --with-mpc=$(brew --prefix libmpc) --with-system-zlib"
   fi
   ## Check if using MacPorts
   if command -v port &> /dev/null; then
-    TARG_XTRA_OPTS="--with-gmp=$(port -q prefix gmp) --with-mpfr=$(port -q prefix mpfr) --with-mpc=$(port -q prefix libmpc)"
+    TARG_XTRA_OPTS="--with-gmp=$(port -q prefix gmp) --with-mpfr=$(port -q prefix mpfr) --with-mpc=$(port -q prefix libmpc) --with-system-zlib"
   fi
 fi
 
